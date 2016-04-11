@@ -1,8 +1,8 @@
 # Site wide configuration
 
-title:            Site Title
+title:            Emory University Libraries & Information Technology
 locale:           en_US
-url:
+url:              http://it.emory.edu/
 
 
 # Jekyll configuration
@@ -41,21 +41,22 @@ titlecase: true
 
 # Site owner
 owner:
-  name: Your Name
+  name: Emory University Libraries & Information Technology
   avatar: bio-photo.jpg
-  bio: "Describe your self."
+  bio: "Library & Information Technology Services (LITS) brings together the Emory Libraries, Information Technology, and the Emory Center for Digital Scholarship, across Emory's academic and healthcare components.
+Under the leadership of Enterprise CIO and Senior Vice Provost for Library Services Rich Mendola, LITS focuses on innovation, efficiency and developing synergies and partnerships across the institution, seeking to add as much value as possible to the pursuit of Emory's mission."
   email:
   disqus-shortname:
-  twitter: #username
-  facebook: #username
+  twitter: EmoryUniversity
+  facebook: EmoryUniversity
   google:
-    plus: #username
-    analytics:
-    verify:
-    ad-client:
-    ad-slot:
+    plus: emoryuniversity
+    # analytics:
+    # verify:
+    # ad-client:
+    # ad-slot:
   bing-verify:
-  github: #username
+  github: emory-libraries
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
   linkedin: #username
   xing: #username
