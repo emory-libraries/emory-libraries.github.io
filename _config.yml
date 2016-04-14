@@ -41,11 +41,10 @@ titlecase: true
 
 # Site owner
 owner:
-  name: 
-  avatar: LibraryInfoTech_vt_280.png
-  bio: "Library & Information Technology Services (LITS) brings together the Emory Libraries, Information Technology, and the Emory Center for Digital Scholarship, across Emory's academic and healthcare components.
- LITS focuses on innovation, efficiency and developing synergies and partnerships across the institution, seeking to add as much value as possible to the pursuit of Emory's mission."
-  email:
+  name: Emory University Libraries and Information Technology
+  avatar: LibraryInfoTech_hz_280.png
+  bio: ""
+  email: libsysdev-l@listserv.cc.emory.edu
   disqus-shortname:
   twitter: EmoryUniversity
   facebook: EmoryUniversity
