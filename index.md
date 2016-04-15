@@ -1,5 +1,5 @@
 ---
 layout: home
-excerpt: "A minimal Jekyll theme for your blog by designer Michael Rose."
-tags: [Jekyll, theme, responsive, blog, template]
+excerpt: "Emory University Libraries and Information Technology Dev Team Tech Blog"
+tags: [Emory University, Development, Blog, Documentation]
 ---
