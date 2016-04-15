@@ -1,20 +1,35 @@
 # Authors
 
-billy_rick:
-  name: Test User
-  web: http://www.emory.edu
-  email: test.user@emory.edu
-  bio: "Hello there"
-  avatar: bio-photo-2.jpg
+
+# Site wide admin author
+admin:
+  name: LITS Dev Team Admin
+  web: https://techknowhow.library.emory.edu/
+  email: libsysdev-l@listserv.cc.emory.edu
+  bio: "LITS Dev Team Admin is the general account that we use to post announcement and site wide contents"
+  avatar: emory-libraries.jpeg
   twitter:
   google:
     plus:
 
-cornelius_fiddlebone:
-  name: Cornelius Fiddlebone
-  email: cornelius@thewhip.com
-  bio: "I ordered what?"
-  avatar: bio-photo.jpg
-  twitter: rhymeswithsackit
+# A custom author
+yang_li:
+  name: Yang Li
+  web:
+  email: yang.li@emory.edu
+  bio: "Hello there"
+  avatar: yang-li.png
+  twitter:
   google:
-    plus: CorneliusFiddlebone
+    plus:
+
+# A custom author template
+# firstname_lastname:
+#   name: Dooley Dooley
+#   web: http://www.emory.edu
+#   email: dooley.dooley@emory.edu
+#   bio: "I dismiss classes, whether you like it or not."
+#   avatar: dooley-dooley.png
+#   twitter: dooleyfromemory
+#   google: dooleyfromemory
+#     plus: dooleyfromemory
