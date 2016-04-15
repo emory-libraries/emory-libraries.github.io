@@ -7,7 +7,7 @@ author: yang_li
 
 Title:  Jekyll Setup and Configuration Notes  
 Author: Yang Li  
-Date:   April 12, 2016  
+Date:   April 13, 2016  
 
 
 # Background
