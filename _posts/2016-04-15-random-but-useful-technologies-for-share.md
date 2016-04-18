@@ -10,5 +10,9 @@ Sometimes I run into cool packages, open source projects, plugins, etc. and they
 
 # Content
 
-**[Favicon & App Icon Generator](http://www.favicon-generator.org/)**  
+## [Favicon & App Icon Generator](http://www.favicon-generator.org/)
 Generates a collection of favicons for varying devices.
+
+##[Swiper](http://idangero.us/swiper/demos)
+Most Modern Mobile Touch Slider  
+Thanks Jay Varner
