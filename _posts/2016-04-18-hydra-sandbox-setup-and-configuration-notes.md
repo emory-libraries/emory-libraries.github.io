@@ -98,3 +98,17 @@ then run the generate on the hydra:head:
 If it prompts you with errors such as curation_concerns not found, we can try reinstalling the cc:   
 > gem install curation__concerns  
 > rails generate curation__concerns:install  
+
+A few other good ones shared by the team:  
+
+[Solr in 5 Minutes](https://www.youtube.com/watch?v=ClhrrPzJWmI)
+
+[Fedora Repository is not the Linux distribution](https://www.youtube.com/watch?v=U9jaFM0Q2h0)
+
+this may also be of interest - more about the "onion skin" layers of Hydra functionality:   [Dive into Hydra Works](https://github.com/projecthydra-labs/hydra-works/wiki/Dive-into-Hydra-Works)
+
+[A More Worthwhile Sufia Now with PCDM](http://www.slideshare.net/jpstroop/a-more-worthwhile-sufia-now-with-pcdm)
+
+[Hydra Technical Deepdive](http://www.slideshare.net/DuraSpace/hydra-technical-deepdive)
+
+Thanks Emily and Zo for sharing and support!
