@@ -20,4 +20,7 @@ Most Modern Mobile Touch Slider. Thanks Jay Varner
 
 ## Back-end
 
+* [pdb: Using the Python debugger in Django](https://mike.tig.as/blog/2010/09/14/pdb/)
+Django debugging tool; equivalent of byebug gem in rails
+
 ## Misc
