@@ -16,6 +16,7 @@ sass:
 gems:
   - jekyll-sitemap
   - jekyll-gist
+  - jekyll-mentions
 
 kramdown:
   auto_ids: true
@@ -43,7 +44,7 @@ titlecase: true
 owner:
   name: LITS Dev Team
   avatar: LibraryInfoTech_hz_280.png
-  bio: 
+  bio:
   email: libsysdev-l@listserv.cc.emory.edu
   disqus-shortname:
   twitter:
