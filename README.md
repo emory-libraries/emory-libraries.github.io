@@ -8,19 +8,24 @@ Run jekyll and view at http://localhost:4000 (by default):
 
     bundle exec jekyll serve
 
-To use octopress to create a new post (optional):
+To use octopress to create a new post or page (optional but recommended), e.g.:
 
     octopress new draft  title-of-post
 
-Run jekyll serve with `-D` to display draft articles, and use octopress to publish when you're done revising (this will set the date for you):
+Run jekyll serve with `-D` to display draft articles, and use [octopress](https://github.com/octopress/octopress) to publish when you're done revising (this will set the date for you):
 
     octopress publish title-of-post
 
 The first time you add an article you should also add yourself to the `_authors.yml` file in the _data directory.  Make sure to set yourself
 as the post article.
 
+## documentation and links
 
+* [jekyll](http://jekyllrb.com/)
+* [liquid](https://shopify.github.io/liquid/) (template language used by jekyll)
+* [octopress](https://github.com/octopress/octopress)
 
+* * *
 
 # Minimal Mistakes
 
