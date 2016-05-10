@@ -12,9 +12,9 @@ How To Post
 ===========
 * Checkout the latest version of the [repository](https://github.com/emory-libraries/emory-libraries.github.io)
 * Create a new branch for your post
-* Make sure you have an entry for your username in *_data/_authors.yml*
-* Create a file in the _posts directory of the format `YYYY-MM-DD-TITLE.md`
-* In the above file, include the below header information. Note the author field links to the reference in *_data/_authors.yml*:
+* Make sure you have an entry for your username in `_data/_authors.yml`
+* Create a file in the `_posts` directory of the format `YYYY-MM-DD-TITLE.md`
+* In the above file, include the below header information. Note the author field links to the reference in `_data/_authors.yml`:
 ```
 ---
 layout: post
