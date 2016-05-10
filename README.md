@@ -52,4 +52,4 @@ Minimal Mistakes takes advantage of Sass and data files to make customizing easi
 To learn how to install and use this theme check out the [Setup Guide](http://mmistakes.github.io/minimal-mistakes/theme-setup/) for more information.
 
 
-Read her for[ Posting Guidelines and Procedure] (PostingGuidelines.md)
+Read here for[ Posting Guidelines and Procedures] (PostingGuidelines.md)
