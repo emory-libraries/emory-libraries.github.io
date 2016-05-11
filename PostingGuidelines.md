@@ -5,7 +5,7 @@ What Should Be Posted
 * **DO** post summaries of other blog posts and how they apply to our work - make sure to link to to the source for these
 * **DO** post personal or project achievements if it relates to a particular project or initiative
 * **DO** post links to interesting technologies and articles and explain how we might use them. For these be sure to tag them with "InterestingTech" - Tags coming soon
-* **DO NOT** post internal documentation even if it does not contain sensitive information
+* **DO NOT** post internal documentation even if it does not contain sensitive information. Information such as this should be added in the project documentation.
 
 
 How To Post
@@ -24,5 +24,5 @@ author: yang_li
 ---
 ```
 * Write your post
-*  On GitHub create a [pull request](https://github.com/emory-libraries/emory-libraries.github.io/compare?expand=1) for others to review
+*  On GitHub create a [pull request](https://github.com/emory-libraries/emory-libraries.github.io/compare?expand=1) for others to review. Posts that fall under the "interesting tech" category do not need to be reviewed, thus they can be committed without a a pull request. 
 *  All can ask questions and add comments, but the Ringleader for the iteration has the responsibility to review and merge (or not merge) the pull request to the main branch.  If the post is by the current Ringleader, or the Ringleader is unavailable due to being sick or on vacation, the responsibility falls to the next person on the list.
