@@ -13,8 +13,9 @@ How To Post
 * Checkout the latest version of the [repository](https://github.com/emory-libraries/emory-libraries.github.io)
 * Create a new branch for your post
 * Make sure you have an entry for your username in `_data/_authors.yml`
-* Create a file in the `_posts` directory of the format `YYYY-MM-DD-TITLE.md`
-* In the above file, include the below header information. Note the author field links to the reference in `_data/_authors.yml`:
+* Use octopress to create a new post or page (recommended) `octopress new draft  title-of-post`
+    * Run jekyll serve with `-D` to display draft articles, and use [octopress](https://github.com/octopress/octopress) to publish when you are done revising (this will set the date for you) `octopress publish title-of-post`   
+* To create a new post file manually, create a file in the `_posts` directory of the format `YYYY-MM-DD-TITLE.md` in the new file, include the below header information. Note the author field links to the reference in `_data/_authors.yml`:
 ```
 ---
 layout: post
@@ -24,5 +25,6 @@ author: yang_li
 ---
 ```
 * Write your post
-*  On GitHub create a [pull request](https://github.com/emory-libraries/emory-libraries.github.io/compare?expand=1) for others to review. Posts that fall under the "interesting tech" category do not need to be reviewed, thus they can be committed without a a pull request. 
+* To see your post on a your local version of the blog before you publish it,  run `bundle exec jekyll serve` and and go to http://localhost:4000 (by default). 
+*  On GitHub create a [pull request](https://github.com/emory-libraries/emory-libraries.github.io/compare?expand=1) for others to review. Posts that fall under the "interesting tech" category do not need to be reviewed, thus they can be committed without a a pull request.
 *  All can ask questions and add comments, but the Ringleader for the iteration has the responsibility to review and merge (or not merge) the pull request to the main branch.  If the post is by the current Ringleader, or the Ringleader is unavailable due to being sick or on vacation, the responsibility falls to the next person on the list.
