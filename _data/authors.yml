@@ -23,6 +23,14 @@ yang_li:
   google:
     plus:
 
+# A custom author
+athom09:
+  name: Alexander Thomas
+  email: athom09@emory.edu
+  bio: "Lead Software Engineer: Emory University Libraries"
+  avatar: athom09.png
+
+
 # A custom author template
 # firstname_lastname:
 #   name: Dooley Dooley
