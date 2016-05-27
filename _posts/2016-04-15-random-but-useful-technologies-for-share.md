@@ -2,7 +2,8 @@
 layout: post
 title: Random but Useful Technologies for Share
 categories: [packages, tools, development]
-author: yang_li
+authors:
+    - yang_li
 ---
 
 # Background
