@@ -4,7 +4,6 @@ title: Jekyll Setup and Configuration Notes
 categories: [Jekyll]
 authors:
     - yang_li
-    - jayvarner
 ---
 
 # Background
