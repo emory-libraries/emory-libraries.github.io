@@ -2,13 +2,10 @@
 layout: post
 title: Jekyll Setup and Configuration Notes  
 categories: [Jekyll]
-author: yang_li
+authors:
+    - yang_li
+    - jayvarner
 ---
-
-Title:  Jekyll Setup and Configuration Notes  
-Author: Yang Li  
-Date:   April 13, 2016  
-
 
 # Background
 
