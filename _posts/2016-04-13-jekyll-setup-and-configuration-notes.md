@@ -2,7 +2,7 @@
 layout: post
 title: Jekyll Setup and Configuration Notes  
 tags:
-    - Jekyll
+    - jekyll
 authors:
     - yang_li
 ---

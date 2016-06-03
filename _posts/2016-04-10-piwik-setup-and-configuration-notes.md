@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Piwik Setup and Configuration Notes  
-tags: 
-  - jekyll
+tags:
+    - jekyll
 authors:
     - yang_li
 ---
