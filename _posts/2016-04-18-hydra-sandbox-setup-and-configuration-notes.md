@@ -1,7 +1,10 @@
 ---
 layout: post
 title: Hydra Sandbox Setup and Configuration Notes
-categories: [hydra, sandbox, development]
+tags: 
+    - hydra
+    - sandbox
+    - development
 authors:
     - yang_li
 ---
