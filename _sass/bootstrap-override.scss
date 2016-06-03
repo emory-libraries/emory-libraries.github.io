@@ -6,6 +6,9 @@ body {
       font-family: "PT Sans Narrow", sans-serif;
       font-weight: $font-weight-title;
     }
+    p, article, ul, ol, pre {
+      font-size: $font-size-content;
+    }
   }
 }
 
@@ -13,5 +16,9 @@ body {
   h1, h2, h3, h4, h5, h6 {
     font-family: "PT Sans Narrow", sans-serif;
     font-weight: $font-weight-title;
+  }
+
+  p, article, ul, ol, pre {
+    font-size: $font-size-content;
   }
 }
