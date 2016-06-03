@@ -2,7 +2,8 @@
 layout: post
 title: Piwik Setup and Configuration Notes  
 categories: [Jekyll]
-author: yang_li
+authors:
+    - yang_li
 ---
 
 # Background

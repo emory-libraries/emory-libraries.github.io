@@ -30,6 +30,12 @@ athom09:
   bio: "Lead Software Engineer: Emory University Libraries"
   avatar: athom09.png
 
+jayvarner:
+  name: Jay Varner
+  bio: "Software Engineer: Emory University Libraries"
+  twitter: jayvarner
+  github: jayvarner
+
 
 # A custom author template
 # firstname_lastname:

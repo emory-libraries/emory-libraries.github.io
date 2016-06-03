@@ -27,3 +27,9 @@ sitemap: false
 @import "vendor/magnific-popup/magnific-popup";
 //@import "vendor/google/fonts";
 @import "print";
+
+.article-wrap {
+    p {
+        padding-bottom: 1em;
+    }
+}

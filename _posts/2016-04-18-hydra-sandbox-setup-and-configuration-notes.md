@@ -2,7 +2,8 @@
 layout: post
 title: Hydra Sandbox Setup and Configuration Notes
 categories: [hydra, sandbox, development]
-author: yang_li
+authors:
+    - yang_li
 ---
 
 This is a note for developers who are attempting to setup Hydra project on a Mac in the Emory LITS setting. It includes some of the general steps introduced in the Hydra framework GitHub tutorial together with some documentations summarized from the installation process we did ourselves.  
