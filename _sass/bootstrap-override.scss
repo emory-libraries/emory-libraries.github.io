@@ -1,4 +1,17 @@
-#index {
-  margin-left: 0;
-  margin-right: 0;
+@import "variables";
+
+body {
+  .home, .page, .post-index {
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "PT Sans Narrow", sans-serif;
+      font-weight: $font-weight-title;
+    }
+  }
+}
+
+#index, #main {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "PT Sans Narrow", sans-serif;
+    font-weight: $font-weight-title;
+  }
 }
