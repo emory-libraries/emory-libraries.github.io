@@ -1,14 +1,19 @@
 @import "variables";
 
 body {
-  .home, .page, .post-index {
+  .home, .page, .post-index, .author-social {
     h1, h2, h3, h4, h5, h6 {
       font-family: "PT Sans Narrow", sans-serif;
       font-weight: $font-weight-title;
     }
-    p, article, ul, ol, pre {
+    p, article, ul, ol, pre, code {
       font-size: $font-size-content;
     }
+  }
+
+  .byline {
+    color: $bylinecolor;
+    margin-top: -5px;
   }
 }
 
@@ -18,7 +23,7 @@ body {
     font-weight: $font-weight-title;
   }
 
-  p, article, ul, ol, pre {
+  p, article, ul, ol, pre, code {
     font-size: $font-size-content;
   }
 }
