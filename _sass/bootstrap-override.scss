@@ -1,7 +1,7 @@
 @import "variables";
 
 body {
-  .home, .page, .post-index, .author-social, .social-share {
+  .home, .page, .post-index, .author-social, .social-share, .footer-wrap {
     h1, h2, h3, h4, h5, h6 {
       font-family: "PT Sans Narrow", sans-serif;
       font-weight: $font-weight-title;
@@ -9,13 +9,31 @@ body {
     p, article, ul, ol, pre, code {
       font-size: $font-size-content;
     }
-
   }
 
   .byline {
     color: $bylinecolor;
     margin-top: -5px;
   }
+
+  .highlighter-rouge {
+      white-space: normal;
+  }
+
+  .related-articles {
+    h1, h2, h3, h4, h5, h6 {
+      margin-bottom: 10px;
+    }
+  }
+
+  a {
+    color: $acolor;
+
+    &:visited {
+      color: $avisited;
+    }
+  }
+
 }
 
 #index, #main {
@@ -37,8 +55,4 @@ body {
       font-size: $font-size-title;
     }
   }
-}
-
-.highlighter-rouge {
-    white-space: normal;
 }
