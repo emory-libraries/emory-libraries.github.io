@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Jekyll Setup and Configuration Notes  
-categories: [Jekyll]
+tags:
+    - jekyll
 authors:
     - yang_li
 ---

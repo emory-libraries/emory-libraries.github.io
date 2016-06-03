@@ -1,0 +1,19 @@
+{% assign post=include.post %}
+<article>
+{% if post.link %}
+  <h2 class="link-post"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> <a href="{{ post.link }}" target="_blank" title="{{ post.title }}"><i class="fa fa-link"></i></a></h2>
+{% else %}
+  <h2><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+  <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
+{% endif %}
+<p class="byline">
+    {% for post_author in post.authors %}
+        {% assign author = site.data.authors[post_author] %}
+        {{ author.name}}{% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+    {% if include.show_date %}
+        | {{ post.date | date_to_long_string }}
+    {% endif %}
+    {% include _tags.html tags=post.tags %}
+</p>
+</article>
