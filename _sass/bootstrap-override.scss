@@ -92,3 +92,171 @@ body {
     }
   }
 }
+
+#main {
+  margin-top: 100px;
+}
+
+// navigation
+.logo-container {
+  float: left;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.logo-container+div.container {
+  width: 100%;
+  position: relative;
+  display: block;
+  z-index: 1;
+
+  background: rgb(0,39,135); /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  rgba(0,39,135,1) 14%, rgba(37,141,200,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(14%,rgba(0,39,135,1)), color-stop(100%,rgba(37,141,200,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg,  rgba(0,39,135,1) 14%,rgba(37,141,200,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg,  rgba(0,39,135,1) 14%,rgba(37,141,200,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg,  rgba(0,39,135,1) 14%,rgba(37,141,200,1) 100%); /* IE10+ */
+  background: linear-gradient(135deg,  rgba(0,39,135,1) 14%,rgba(37,141,200,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002787', endColorstr='#258dc8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.logo-container+div.container .nav>li>a,
+.logo-container+div.container .nav>li>.nav-text{
+  padding-top: 16px;
+  padding-left: 15px;
+  color:#FFF;
+  opacity: 0.8;
+  transition:opacity 0.2s;
+  margin-top:0;
+}
+
+.logo-container+div.container .nav>li>.nav-text {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    opacity: 1;
+}
+
+@media (min-width: 768px){
+    .logo-container+div.container .nav>li>.nav-text {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+.navbar-inverse .navbar-collapse{
+  background-color:#333;
+  background-color: rgba(27, 27, 27, 0.8);
+}
+
+.logo-container+div.container .nav>li>a:hover,
+.logo-container+div.container .nav>li>a:focus{
+  color:#FFF;
+  opacity: 1;
+}
+
+
+.banner-container{
+    display: table-cell;
+    vertical-align: top;
+}
+@media(min-width:768px){
+  .navbar-inverse .navbar-collapse{
+    background-color:transparent;
+  }
+  .logo-container+div.container .nav>li>a{
+    background-color:transparent;
+  }
+
+  .logo-container{
+      vertical-align: middle;
+      width:2%;
+      float: none;
+      display: table-cell;
+      background: #002787;
+  }
+  .logo-container+div.container {
+    display:table-cell;
+    padding-left: 0;
+  }
+}
+@media (min-width: 768px){
+  .navbar{
+    display: table;
+  }
+}
+.navbar.navbar-fixed-top.navbar-inverse {
+    border-color: #002878;
+    border-color: rgba(255, 255, 255, 0.71);
+}
+
+.logo-container+div.container .nav>li>a.site-title {
+  font-size: 1.4em;
+  padding-top: 0.55em;
+  padding-bottom: 0.55em;
+  line-height: 1.4;
+}
+
+@media (min-width:768px){
+  .logo-container+div.container .nav>li>a.site-title {
+    margin-left: -15px;
+    border-left: 1px solid #3D548F;
+  }
+}
+
+.logo-container+.banner-container{
+    background: rgb(30, 30, 32);
+    padding-top: 15px;
+}
+
+.logo-container .logo{
+  background-color: #002787;
+  float: left;
+}
+
+.logo-container .logo img{
+  width: 120px;
+  padding: 12px;
+
+}
+
+.banner-container .emory-banner {
+  background-color:transparent;
+  border:none;
+  padding-top: 25px;
+}
+
+.banner-container h1.site-title{
+  font-size:2em;
+}
+
+.banner-container h1.site-title a{
+    color: #E0E0E0;
+}
+
+.banner-container h1.site-title:before {
+  display:none;
+}
+
+.banner-container .container>.navbar-header{
+  width:100%;
+  margin-top: -30px;
+  padding-bottom: 18px;
+}
+
+.banner-container .container{
+  width:100%;
+}
+
+@media(min-width:767px){
+  .banner-container .emory-banner {
+    padding-top: 0px;
+  }
+  .banner-container .container>.navbar-header{
+    padding-bottom:0px;
+  }
+}
