@@ -606,7 +606,7 @@ $button-size: 1.5rem;
 	  padding: 8px 20px;
 	  text-decoration: none !important;
 	  text-transform: uppercase;
-	  @include font-rem(14);
+	  @include font-rem(32);
 	  font-family: $heading-font;
 	  font-weight: 700;
 	  color: $white;
@@ -623,7 +623,7 @@ $button-size: 1.5rem;
 		}
 	}
 	h4 {
-		@include font-rem(14);
+		@include font-rem(32);
 		margin-bottom: 10px;
 		text-transform: uppercase;
 	}

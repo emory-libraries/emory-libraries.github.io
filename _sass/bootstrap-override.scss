@@ -1,7 +1,7 @@
 @import "variables";
 
 body {
-  .home, .page, .post-index, .author-social {
+  .home, .page, .post-index, .author-social, .social-share {
     h1, h2, h3, h4, h5, h6 {
       font-family: "PT Sans Narrow", sans-serif;
       font-weight: $font-weight-title;
@@ -9,6 +9,7 @@ body {
     p, article, ul, ol, pre, code {
       font-size: $font-size-content;
     }
+
   }
 
   .byline {
@@ -25,5 +26,15 @@ body {
 
   p, article, ul, ol, pre, code {
     font-size: $font-size-content;
+  }
+}
+
+#site-nav {
+  ul {
+    li {
+      font-family: "PT Sans Narrow", sans-serif;
+      font-weight: $font-weight-title;
+      font-size: $font-size-title;
+    }
   }
 }
