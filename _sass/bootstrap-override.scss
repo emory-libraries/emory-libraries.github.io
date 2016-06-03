@@ -9,7 +9,7 @@ body {
     p, article, ul, ol, pre, code {
       font-size: $font-size-content;
     }
-    a, span {
+    span, &a {
       font-size: $font-size-copyright;
     }
   }
@@ -27,6 +27,7 @@ body {
     h1, h2, h3, h4, h5, h6 {
       margin-bottom: 10px;
     }
+    width: 41.66667%;
   }
 
   footer {
