@@ -12,4 +12,16 @@
 </div><!-- /.google-ads -->
 {% endif %}
 
-<span>&copy; {{ site.time | date: '%Y' }} {{ site.owner.name }}. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<div class="container">
+    <hr>
+    <div class="col-xs-12 col-sm-10">
+        <p id="sw_version">0.0.1</p>
+        <span>&copy; {{ site.time | date: '%Y' }} {{ site.owner.name }}. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+    </div>
+    <div class="col-xs-12 col-sm-2">
+        <div class="lits">
+            <p>Powered by:</p>
+            <img src={{site.baseurl}}"/assets/images/LITS-logo-bk.png">
+        </div>
+    </div>
+</div>

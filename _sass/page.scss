@@ -646,21 +646,21 @@ $button-size: 1.5rem;
 	span {
 		@include font-rem(32);
 	}
-	footer {
-		@include grid(12,10);
-		@include prefix(12,1);
-		@include suffix(12,1);
-		@media #{$small} {
-			@include grid(12,6);
-			@include prefix(12,3);
-			@include suffix(12,3);
-		}
-		@media #{$x-large} {
-			@include grid(12,4.5);
-			@include prefix(12,4);
-			@include suffix(12,3.5);
-		}
-	}
+	// footer {
+	// 	@include grid(12,10);
+	// 	@include prefix(12,1);
+	// 	@include suffix(12,1);
+	// 	@media #{$small} {
+	// 		@include grid(12,6);
+	// 		@include prefix(12,3);
+	// 		@include suffix(12,3);
+	// 	}
+	// 	@media #{$x-large} {
+	// 		@include grid(12,4.5);
+	// 		@include prefix(12,4);
+	// 		@include suffix(12,3.5);
+	// 	}
+	// }
 }
 
 /* Related articles list */
