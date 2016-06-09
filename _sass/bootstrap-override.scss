@@ -75,6 +75,12 @@ body {
     background-color: rgba(63,60,65,.9);
     color: #f8f8f2;
   }
+
+  .article-wrap {
+      p {
+          padding-bottom: 1em;
+      }
+  }
 }
 
 #index, #main {

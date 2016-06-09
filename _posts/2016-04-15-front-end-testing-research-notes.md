@@ -1,8 +1,10 @@
 ---
 layout: post
 title: Front-end Testing Research Notes
-categories: [Jekyll]
-author: yang_li
+tags: 
+    - jekyll
+authors:
+    - yang_li
 ---
 # Background
 

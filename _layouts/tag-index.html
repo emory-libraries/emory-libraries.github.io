@@ -7,7 +7,7 @@
 {% include _head.html %}
 </head>
 
-<body class="page">
+<body class="post-index">
 
 {% include _browser-upgrade.html %}
 
@@ -32,20 +32,21 @@
   <div class="article-author-side">
     {% include _org-info.html %}
   </div>
-  <article class="page">
+  <div id="index">
     <h1>{{ page.title }}</h1>
-    <div class="article-wrap">
-      {{ content }}
-      {% if page.share != false %}
-        <hr />
-        {% include _social-share.html %}
-      {% endif %}
-    </div><!-- /.article-wrap -->
-    {% if site.owner.disqus-shortname and page.comments == true %}
-      <section id="disqus_thread"></section><!-- /#disqus_thread -->
-    {% endif %}
-  </article>
-</div><!-- /#index -->
+    {% for tag_info in site.tags %}
+        {% assign tag=tag_info[0] %} {% assign posts=tag_info[1] %} {% assign tag_data=site.data.tags[tag] %}
+        <a name="{{ tag }}"><h2 class="tag">{% if tag_data.name %}{{ tag_data.name }}{% else %}{{ tag }}{% endif %}</h2></a>
+        {% if tag_data.description %}
+          <p class="description">{{ tag_data.description %}}</p>
+        {% endif %}
+        {% for post in posts %}
+            {% include _list-post.html post=post show_date=true %}
+        {% endfor %}
+    {% endfor %}
+
+  </div><!-- /#index -->
+</div><!-- /#main -->
 
 <div class="footer-wrap">
   <footer>

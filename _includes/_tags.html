@@ -1,0 +1,8 @@
+{% comment %}display and link tags on a post {% endcomment %}
+{% if include.tags.size %}
+    <div class="tags text-muted small align-right">
+    {% for tag in include.tags %}
+        <a href="{{ site.baseurl }}/tags/#{{ tag }}"><span property="schema:keywords">{{ tag }}</span></a>
+    {% endfor %}
+    </div>
+{% endif %}

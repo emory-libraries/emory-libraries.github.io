@@ -70,3 +70,23 @@
 b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a {
 	@include transition(all .2s ease);
 }
+
+/* style for post tags */
+.tags {
+  font-size: 85%;
+  color: gray;
+  text-align: right;
+  clear: right;
+  margin-top: -15px;
+}
+.tags span {
+  padding-left: 5px;
+}
+.tags span:before {
+  content: "#";
+}
+
+.description {
+    font-weight: 85%;
+    font-style: italic;
+}

@@ -4,5 +4,8 @@ title: {{ title }}
 modified:
 categories: {{ dir }}
 excerpt:
-tags: []
+authors:
+   -
+tags:
+   -
 ---

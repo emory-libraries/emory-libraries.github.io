@@ -1,0 +1,9 @@
+# tag description and metadata
+# - if a name is specified here, it will be shown in the tag list
+#   instead of the slug
+# - if a tag description is here, it will be displayed on the tag index
+
+hydra:
+  description: "Work related to
+  <a href='https://projecthydra.org/'>Project Hydra</a>"
+
