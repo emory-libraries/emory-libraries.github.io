@@ -70,6 +70,11 @@ body {
       color: $avisited;
     }
   }
+
+  .highlighter-rouge {
+    background-color: rgba(63,60,65,.9);
+    color: #f8f8f2;
+  }
 }
 
 #index, #main {
