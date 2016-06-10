@@ -4,6 +4,7 @@ title: Bringing Your Maps into Focus
 categories: [gdal, geospatial, gis, wms, webmapping]
 authors:
     - jayvarner
+    - megan
 ---
 
 Here at Emory, we have some pretty cool old [maps of Atlanta](http://www.digitalgallery.emory.edu/luna/servlet/view/all/where/Atlanta?sort=title%2Cpage_no_%2Ccity%2Cdate) that we wanted to share in a more interactive way. But when we tried, the maps looked like this:
@@ -40,13 +41,13 @@ We use `gdalwarp` to reproject, resample, add internal tiling, and compress[^few
 
 [^fewer]: In previous talks and workshops, we presented a three-step process where we did tiled and compressed the image using `gdal_translate`. While writing this post we realized a way to combine perform these actions with `gdalwarp`.
 
-#### Reporject
+#### Reproject
 When you georeference a scanned map, you select a [projection](https://en.wikipedia.org/wiki/Map_projection). For most GIS needs, you will want to use the projection appropriate for the chunk of Earth your map covers. However, for displaying maps on the web, you want to use EPSG:3857[^whcihcode]. To reproject a GeoTIFF you can use the `gdalwarp` command:
 
 [^whcihcode]:There is confusion between EPSG:3857 and EPSG:4326. For displaying raster data using something like Leaflet, OpenLayers, etc. 3857 will result in a much clearer image. Here are two links that helped us understand. [http://gis.stackexchange.com/a/48952](http://gis.stackexchange.com/a/48952) and [http://www.faqoverflow.com/gis/48949.html](http://www.faqoverflow.com/gis/48949.html)
 
 #### Resample
-`gdalwarp` offers various algorithms[^man] for [resampeling](https://en.wikipedia.org/wiki/Image_scaling). We suggest you try a few and see what works best. We’ve had good results using `average`, but many folks will suggest `near`.
+`gdalwarp` offers various algorithms[^man] for [resampling](https://en.wikipedia.org/wiki/Image_scaling). We suggest you try a few and see what works best. We’ve had good results using `average`, but many folks will suggest `near`.
 
 [^man]: You can see a list of available algorithms by running `man gdadalwarp` and reading the explanation of the `-r` option. `man` is short for manual. Use the space bar to scroll through the text and type `q` to quite the man page viewer. Or you can [read it here](http://www.gdal.org/gdalwarp.html).
 

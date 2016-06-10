@@ -4,6 +4,7 @@ title: An Overview of Overviews
 categories: [gdal, geospatial, gis, wms, webmapping, geotiff]
 authors:
     - jayvarner
+    - megan
 ---
 ## Internal Tiling and Overviews
 In our previous post, *Bringing Your Maps into Focus*, we covered a three-step process using [GDAL](http://gdal.org). There is a lot going on in the last two steps, internal tiling and overviews, that are hard to research and understand what’s really going on.
@@ -81,7 +82,7 @@ Megapixels                      : 33.9
 
 If we run it on a GeoTIFF, we see some extra stuff:
 
-~~~
+~~~shell
 $ exiftool Atlanta_1928_Sheet45.tif
 …
 Rows Per Strip                  : 64
@@ -112,7 +113,7 @@ Megapixels                      : 33.9
 
 And let’s look at what `gdalinfo` has to say:
 
-~~~
+~~~shell
 $ gdalinfo Atlanta_1928_Sheet45.tif
 Driver: GTiff/GeoTIFF
 Files: Atlanta_1928_Sheet45.tif
@@ -159,11 +160,12 @@ Band 3 Block=5364x64 Type=Byte, ColorInterp=Blue
 [^strips]: [http://www.awaresystems.be/imaging/tiff/tifftags/rowsperstrip.html](http://www.awaresystems.be/imaging/tiff/tifftags/rowsperstrip.html)
 
 Looking at the “Rows Per Strip” tag in the `exiftool` output, we can see that, prior to georeferencing, our TIFF had strips that were 16 rows/pixels tall.  Our GeoTIFF’s strips are 64 rows/pixels tall. `gdalinfo` confirms that:
-```
+
+```shell
 Band 1 Block=5364x64 Type=Byte, ColorInterp=Red
 ```
 
-This will help the speed that our maps are loaded, Rather than loading all 33,943,392 pixels at once, the image will be rendered in 343,296 pixel strips. But what if the only part of the map that is requested is one corner? The client will get the whole strip and a lot of unwanted data. The whole points of using WMS and slippy maps is only serving the tile(s) that are requested. GeoServer can tile the image on the fly, but adding tiles internally to our GeoTIFF will take some load off GeoServer and make everything faster [IS THIS TRUE?]
+This will help the speed that our maps are loaded, Rather than loading all 33,943,392 pixels at once, the image will be rendered in 343,296 pixel strips. But what if the only part of the map that is requested is one corner? The client will get the whole strip and a lot of unwanted data. The whole points of using WMS and slippy maps is only serving the tile(s) that are requested.
 
 ### Tiles
 
@@ -178,20 +180,20 @@ Above we see with `gdalinfo` that each band’s block spans the whole image and 
 
  The full command from our previous post:
 
-```
+```shell
 $ gdal_translate -co 'TILED=YES' -co 'BLOCKXSIZE=256' -co 'BLOCKYSIZE=256' -co 'COMPRESSION=JPEG' /data/tmp/atlanta_1928_sheet45.tif  /data/processed/atlanta_1928_sheet45.tif
 ```
 
 Running `exiftool` on the translated GeoTIFF shows:
 
-```
+```shell
 Tile Width    : 256
 Tile Length   : 256
 ```
 
 And `gdalinfo` shows:
 
-```
+```shell
 Band 1 Block=256x256 Type=Byte, ColorInterp=Red
 Band 2 Block=256x256 Type=Byte, ColorInterp=Green
 Band 3 Block=256x256 Type=Byte, ColorInterp=Blue
@@ -201,7 +203,7 @@ Band 3 Block=256x256 Type=Byte, ColorInterp=Blue
 ### Overviews aka Subfiles
 A TIFF file can contain multiple subfiles[^subfile]. Using `gdaladdo` we can create multiple subfiles of our map at different resolutions. GDAL calls subfiles [overviews](http://www.gdal.org/frmt_gtiff.html#overviews). Let’s look back at our example:
 
-```
+```shell
 gdaladdo --config GDAL_TIFF_OVR_BLOCKSIZE 256 -r average /data/processed/atlanta_1928_sheet45.tif 2 4 8 16 32
 ```
 
@@ -213,7 +215,7 @@ Finally that list of numbers at the end is the amount the image will be reduced:
 
 Let’s look at what happened by looking at the `gdalinfo` output:
 
-~~~
+~~~shell
 Band 1 Block=256x256 Type=Byte, ColorInterp=Red
   Overviews: 2673x3186, 1337x1593, 669x797, 335x399, 168x200
 Band 2 Block=256x256 Type=Byte, ColorInterp=Green
@@ -224,7 +226,7 @@ Band 3 Block=256x256 Type=Byte, ColorInterp=Blue
 
 Just for fun and to prove those low resolution versions really do exist, let’s use a bunch of exiftool options to inspect them (thanks Kyle Fenton!). The output is rather verbose so we’ll really just show the important stuff.
 
-~~~
+~~~shell
 $ exiftool -s -a -e -G5 atlanta_1928_sheet45.tif.tif
 [ExifTool]      ExifToolVersion                 : 10.02
 [System]        FileName                        : atlanta_1928_sheet45.tif.tif
