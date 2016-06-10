@@ -6,7 +6,7 @@ authors:
     - jayvarner
 ---
 
-Here at Emory, we have some pretty cool old [maps of Atlanta](http://www.digitalgallery.emory.edu/luna/servlet/view/all/where/Atlanta?sort=title%2Cpage_no_%2Ccity%2Cdate) that we wanted to share in a more interactive way. But when we tried, the maps looked like looked this:
+Here at Emory, we have some pretty cool old [maps of Atlanta](http://www.digitalgallery.emory.edu/luna/servlet/view/all/where/Atlanta?sort=title%2Cpage_no_%2Ccity%2Cdate) that we wanted to share in a more interactive way. But when we tried, the maps looked like this:
 
 <a class="jsbin-embed" href="http://jsbin.com/howitu/1/embed?output">JS Bin on jsbin.com</a>
 <script src="http://static.jsbin.com/js/embed.min.js?3.35.12"></script>

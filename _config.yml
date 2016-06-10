@@ -7,7 +7,7 @@ url:              #http://it.emory.edu/
 
 # Jekyll configuration
 
-permalink:   /:categories/:title/
+permalink:   :year/:month/:day/:slug
 markdown:    kramdown
 highlighter: rouge
 sass:
