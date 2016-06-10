@@ -13,6 +13,10 @@ $base-font: 'PT Serif', serif;
 $heading-font: 'PT Sans Narrow', sans-serif;
 $code-font: Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
 $alt-font: $base-font;
+$font-weight-title: 700;
+$font-size-content: 16px;
+$font-size-title: 24px;
+$font-size-copyright: 14px;
 
 /*
    Colors
@@ -29,6 +33,9 @@ $bordercolor    : $basecolor;
 $white          : #fff;
 $black          : #111;
 $accentcolor    : $black;
+$bylinecolor    : #888888;
+$acolor         : #6594EE;
+$avisited       : #135393;
 
 /* buttons */
 $primary			: $black;

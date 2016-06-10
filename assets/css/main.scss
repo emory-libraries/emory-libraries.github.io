@@ -23,13 +23,9 @@ sitemap: false
 @import "elements";
 @import "forms";
 @import "page";
+@import "print";
+@import "bootstrap-override";
 @import "vendor/font-awesome/font-awesome";
 @import "vendor/magnific-popup/magnific-popup";
+@import "vendor/bootstrap";
 //@import "vendor/google/fonts";
-@import "print";
-
-.article-wrap {
-    p {
-        padding-bottom: 1em;
-    }
-}

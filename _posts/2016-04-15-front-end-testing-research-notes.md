@@ -6,7 +6,7 @@ tags:
 authors:
     - yang_li
 ---
-#Background
+# Background
 
 Front-end testing is not quite the same as unit testing in the backend world because of the user interactions that happen in a browser (and you know, in reality its multiple browsers of different versions on different devices). That leads to this topic about front-end testing kit research.
 
