@@ -7,7 +7,7 @@ authors:
     - megan
 ---
 ## Internal Tiling and Overviews
-In our previous post, *Bringing Your Maps into Focus*, we covered a three-step process using [GDAL](http://gdal.org). There is a lot going on in the last two steps, internal tiling and overviews, that are hard to research and understand what’s really going on.
+In our previous post, [*Bringing Your Maps into Focus*](/2016/06/13/bringing-your-maps-into-focus), we covered a two-step process using [GDAL](http://gdal.org). There is a lot going on in the second step, internal tiling and overviews. These processes are hard to research and understand what’s really going on.
 
 We’re going to walk through what is happening using two command line tools; [`exiftool`](https://en.wikipedia.org/wiki/ExifTool) to inspect the GeoTIFF’s internal metadata and GDAL’s [`gdalinfo`](http://www.gdal.org/gdalsrsinfo.html). Installing both is not really a pain. For Mac there are [Homebrew formulas](http://brewformulas.org/) for each. Most Linux distros have packages, and there are [downloads](http://owl.phy.queensu.ca/~phil/exiftool/) for [Windows](https://trac.osgeo.org/osgeo4w/) .
 
@@ -113,7 +113,7 @@ Megapixels                      : 33.9
 
 And let’s look at what `gdalinfo` has to say:
 
-~~~shell
+~~~text
 $ gdalinfo Atlanta_1928_Sheet45.tif
 Driver: GTiff/GeoTIFF
 Files: Atlanta_1928_Sheet45.tif
@@ -159,32 +159,32 @@ Band 3 Block=5364x64 Type=Byte, ColorInterp=Blue
 
 [^strips]: [http://www.awaresystems.be/imaging/tiff/tifftags/rowsperstrip.html](http://www.awaresystems.be/imaging/tiff/tifftags/rowsperstrip.html)
 
-Looking at the “Rows Per Strip” tag in the `exiftool` output, we can see that, prior to georeferencing, our TIFF had strips that were 16 rows/pixels tall.  Our GeoTIFF’s strips are 64 rows/pixels tall. `gdalinfo` confirms that:
+Looking at the “Rows Per Strip” tag in the `exiftool` output, we can see that, prior to georeferencing, our TIFF had strips that were 16 rows/pixels tall. Our GeoTIFF’s strips are 64 rows/pixels tall. `gdalinfo` confirms that:
 
 ```shell
 Band 1 Block=5364x64 Type=Byte, ColorInterp=Red
 ```
 
-This will help the speed that our maps are loaded, Rather than loading all 33,943,392 pixels at once, the image will be rendered in 343,296 pixel strips. But what if the only part of the map that is requested is one corner? The client will get the whole strip and a lot of unwanted data. The whole points of using WMS and slippy maps is only serving the tile(s) that are requested.
+This will help the speed that our maps are loaded. Rather than loading all 33,943,392 pixels at once, the image will be rendered in 343,296 pixel strips. But what if the only part of the map that is requested is one corner? The client will get the whole strip and a lot of unwanted data. The main point of using WMS and slippy maps is only serving the tile(s) that are requested.
 
 ### Tiles
 
-> For low-resolution to medium-resolution images, the standard TIFF method of breaking the image into strips is adequate. However high-resolution images can be accessed more efficiently—and compression tends to work better—if the image is broken into roughly square tiles instead of horizontally-wide but vertically narrow strips.[^tiles]
+> For low-resolution to medium-resolution images, the standard TIFF method of breaking the image into strips is adequate. However high-resolution images can be accessed more efficiently—and compression tends to work better—if the image is broken into roughly square tiles instead of horizontally wide, but vertically narrow, strips.[^tiles]
 
 [^tiles]: See page 66 of the [TIFF spec document](http://partners.adobe.com/public/developer/en/tiff/TIFF6.pdf)
 
 
-Above we see with `gdalinfo` that each band’s block spans the whole image and in the `exiftool` output, our GeoTIFF has no internal tiling. The standard tile size used by OpenStreetMap, Google Maps, etc. is 256 x 256. In the previous post, we ran [`gdal_tranlate`](http://www.gdal.org/gdal_translate.html) on our GeoTIFF we generated tiles that are 256 x 256 `-co 'TILED=YES' -co 'BLOCKXSIZE=256'`[^tiffdriver]
+Above, we see with `gdalinfo` that each band’s block spans the whole image and in the `exiftool` output, our GeoTIFF has no internal tiling. The standard tile size used by OpenStreetMap, Google Maps, etc. is 256 x 256. In the previous post, we ran [`gdalwarp`](http://www.gdal.org/gdalwarp.html) on our GeoTIFF we generated tiles that are 256 x 256 `-co 'TILED=YES' -co 'BLOCKXSIZE=256'`[^tiffdriver]
 
 [^tiffdriver]: The `-co` stand for “creation option” and these are specific to the file format. All the options for GeoTIFFs, and all sorts of good info, can be found at [http://www.gdal.org/frmt_gtiff.html](http://www.gdal.org/frmt_gtiff.html)
 
  The full command from our previous post:
 
 ```shell
-$ gdal_translate -co 'TILED=YES' -co 'BLOCKXSIZE=256' -co 'BLOCKYSIZE=256' -co 'COMPRESSION=JPEG' /data/tmp/atlanta_1928_sheet45.tif  /data/processed/atlanta_1928_sheet45.tif
+$ gdalwarp -s_srs <source ESPG> -t_srs <target EPSG> -r average -co 'TILED=YES/NO' -co 'BLOCKXSIZE=XXX' -co 'BLOCKYSIZE=XXX' -co 'COMPRESS=JPEG' </path/to/source/geo.tif> </path/to/new/geo.tif>
 ```
 
-Running `exiftool` on the translated GeoTIFF shows:
+Running `exiftool` on the warped GeoTIFF shows:
 
 ```shell
 Tile Width    : 256
@@ -204,14 +204,14 @@ Band 3 Block=256x256 Type=Byte, ColorInterp=Blue
 A TIFF file can contain multiple subfiles[^subfile]. Using `gdaladdo` we can create multiple subfiles of our map at different resolutions. GDAL calls subfiles [overviews](http://www.gdal.org/frmt_gtiff.html#overviews). Let’s look back at our example:
 
 ```shell
-gdaladdo --config GDAL_TIFF_OVR_BLOCKSIZE 256 -r average /data/processed/atlanta_1928_sheet45.tif 2 4 8 16 32
+gdaladdo --config GDAL_TIFF_OVR_BLOCKSIZE 256 -r average processed/atlanta_1928_sheet45.tif 2 4 8 16 32
 ```
 
 [^subfile]: See page 16 of the [TIFF spec document](http://partners.adobe.com/public/developer/en/tiff/TIFF6.pdf).
 
-`gdaladdo` tiles the map again and defaults to 128. You can set `GDAL_TIFF_OVR_BLOCKSIZE` as an [environment variable](https://en.wikipedia.org/wiki/Environment_variable), but here we’re just passing it in as an option. The `-r` is choosing the resampling algorithm. We played around with a few and landed on `average`. You might want to try others.
+`gdaladdo` tiles the map again and defaults to 128. You can set `GDAL_TIFF_OVR_BLOCKSIZE` as an [environment variable](https://en.wikipedia.org/wiki/Environment_variable), but here we’re just passing it in as an option. The `-r` is choosing the resampling algorithm for the overviews. We played around with a few and landed on `average`. You might want to try others.
 
-Finally that list of numbers at the end is the amount the image will be reduced: 2 will reduce by half, 4 will reduce by a quarter, and so on.
+Finally, that list of numbers at the end is the amount the image will be reduced: 2 will reduce by half, 4 will reduce by a quarter, and so on.
 
 Let’s look at what happened by looking at the `gdalinfo` output:
 
@@ -224,12 +224,12 @@ Band 3 Block=256x256 Type=Byte, ColorInterp=Blue
   Overviews: 2673x3186, 1337x1593, 669x797, 335x399, 168x200
 ~~~
 
-Just for fun and to prove those low resolution versions really do exist, let’s use a bunch of exiftool options to inspect them (thanks Kyle Fenton!). The output is rather verbose so we’ll really just show the important stuff.
+Just for fun and to prove those low resolution versions really do exist, let’s use a bunch of exiftool options to inspect them (thanks Kyle Fenton!) The output is rather verbose, so we’ll really just show the important stuff.
 
 ~~~shell
 $ exiftool -s -a -e -G5 atlanta_1928_sheet45.tif.tif
 [ExifTool]      ExifToolVersion                 : 10.02
-[System]        FileName                        : atlanta_1928_sheet45.tif.tif
+[System]        FileName                        : atlanta_1928_sheet45.tif
 …
 [TIFF-IFD0]     ImageWidth                      : 5345
 [TIFF-IFD0]     ImageHeight                     : 6371
@@ -255,4 +255,4 @@ $ exiftool -s -a -e -G5 atlanta_1928_sheet45.tif.tif
 [TIFF-IFD5]     SampleFormat                    : Unsigned; Unsigned; Unsigned
 ~~~
 
-TODO: admit you can’t explain the dimensional changes.
+Our process and understanding of these concepts have developed and evolved though collaboration, research, and a lot of trial and error. We would love any feedback and suggestions on how the process could be improved.
