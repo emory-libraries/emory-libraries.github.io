@@ -2,7 +2,7 @@
 layout: post
 title: Bringing Your Maps into Focus
 tags: [gdal, geospatial, gis, wms, webmapping]
-data: 2016-06-13 13:00:00
+date: 2016-06-13 13:00:00
 authors:
     - jayvarner
     - megan

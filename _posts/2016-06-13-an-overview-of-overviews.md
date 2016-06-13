@@ -2,7 +2,7 @@
 layout: post
 title: An Overview of Overviews
 tags: [gdal, geospatial, gis, wms, webmapping, geotiff]
-data: 2016-06-13 13:30:00
+date: 2016-06-13 13:30:00
 authors:
     - jayvarner
     - megan
