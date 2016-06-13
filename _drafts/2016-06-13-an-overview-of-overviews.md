@@ -1,7 +1,7 @@
 ---
 layout: post
 title: An Overview of Overviews
-categories: [gdal, geospatial, gis, wms, webmapping, geotiff]
+tags: [gdal, geospatial, gis, wms, webmapping, geotiff]
 authors:
     - jayvarner
     - megan
