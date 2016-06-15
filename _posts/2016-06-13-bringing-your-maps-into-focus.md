@@ -27,7 +27,7 @@ Next we took the resulting [GeoTIFF](https://en.wikipedia.org/wiki/GeoTIFF) and 
 Finally, like the examples above, we used [Leaflet](http://leafletjs.com/) to display the maps in the browser overlaid on a modern street map.
 
 ## What We Did *Wrong*
-Our first problem was that the GeoTIFF is a high resolution image. We were squeezing a 5,931 x  5,779 pixel image into a 326 x 276 pixel box. There's just too much data. Notice that if you zoom all the way in to our original example, the map looks great.
+Our first problem was that the GeoTIFF is a high resolution image. In the first example on this page, we were squeezing a 5,931 x 5,779 pixel image (the full resolution) into a 326 x 276 pixel box (for the zoom level shown above). There’s just too much data to display clearly. Notice that if you zoom all the way in to our original example, the map looks great.
 
 <a class="jsbin-embed" href="http://jsbin.com/jinure/embed?output&height=500px">JS Bin on jsbin.com</a>
 <script src="http://static.jsbin.com/js/embed.min.js?3.35.12"></script>
