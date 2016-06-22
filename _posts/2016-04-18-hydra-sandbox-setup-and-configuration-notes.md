@@ -166,5 +166,3 @@ this may also be of interest - more about the "onion skin" layers of Hydra funct
 [A More Worthwhile Sufia Now with PCDM](http://www.slideshare.net/jpstroop/a-more-worthwhile-sufia-now-with-pcdm)
 
 [Hydra Technical Deepdive](http://www.slideshare.net/DuraSpace/hydra-technical-deepdive)
-
-Thanks Emily and Zo for sharing and support!
