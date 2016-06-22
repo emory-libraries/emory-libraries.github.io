@@ -1,18 +1,12 @@
 ---
 layout: post
-title: Random but Useful Technologies for Share
-tags: 
-    - packages
-    - tools
-    - development
+title: Useful Technologies for Share
+tags: [packages, tools, development]
 authors:
     - yang_li
 ---
 
-# Background
 Sometimes I run into cool packages, open source projects, plugins, etc. and they are definitely productivity boosters. However I keep forgetting where I saved the link or sometimes forget the name of the hipster-sounding package names. Therefore I'd like to start a post to keep these random but useful technologies together. This list will grow.
-
-# Content
 
 ## Front-end
 
@@ -29,5 +23,3 @@ A guide that collects all different scenarios of centering
 
 * [pdb: Using the Python debugger in Django](https://mike.tig.as/blog/2010/09/14/pdb/)
 Django debugging tool; equivalent of byebug gem in rails
-
-## Misc
