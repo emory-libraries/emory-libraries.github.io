@@ -1,31 +1,27 @@
 ---
 layout: post
 title: Jekyll Setup and Configuration Notes  
-tags:
-    - jekyll
+tags: [jekyll]
 authors:
     - yang_li
 ---
 
-# Background
-
 We have been thinking about using a blog system to collect and organize developer notes, and in order to do so we think that we could use a Jekyll site hosted on our GitHub pages.
 
 
-# Jekyll Setup
+## Jekyll Setup
 
-GitHub offers an excellent tutorial that guides us through the installation and deployment process. We followed the articles in the following link to have our Jekyll site initialized.
-https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/
+GitHub offers an excellent tutorial that guides us through the installation and deployment process. We followed the articles in the following link to have our Jekyll site initialized. [Using Jekyll as a static site generator with GitHub Pages](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/)
 
 
-# Remote Repository
+## Remote Repository
 
 A problem we ran into was that when we do ```bundle exec jekyll serve``` in a locally initialized enviornment (unpublished git repository) Jekyll would complain about ```jekyll 2.4.0 | Error:  undefined method `[]' for nil:NilClass```
 
 The reason behind this is a bug in one of the Jekyll dependencies. The dependency is looking for the remote git repository but if you don't have the repository published it would fail. So what you would need to do is to run ```git remote add origin [your repository]``` to get it started.
 
 
-# Jekyll Themes
+## Jekyll Themes
 
 Rebecca recommended some themes that can be very good for us to style our Jekyll site and here are the links:
 
@@ -35,19 +31,19 @@ Rebecca recommended some themes that can be very good for us to style our Jekyll
 * [JekyllThemes.io](http://jekyllthemes.io/)
 
 
-# Developer's Recipe for Setting up a Jekyll Site
+## Developer's Recipe for Setting up a Jekyll Site
 
 * follow GitHub setup guide to have a repository initialized
-* visit https://github.com/mmistakes/minimal-mistakes
-* git clone git@github.com:mmistakes/minimal-mistakes.git
-* gem install bundler
-* bundle
-* update config.yml, add navigation, and replace demo posts and pages with your own.
+* visit `https://github.com/mmistakes/minimal-mistakes`
+* `git clone git@github.com:mmistakes/minimal-mistakes.git`
+* `gem install bundler`
+* `bundle`
+* update `config.yml`, add navigation, and replace demo posts and pages with your own.
 * customize logo, style, images, authors, and remove the default sample posts
 * deploy to GitHub by pushing the code up
 
 
-# Other Useful Links
+## Other Useful Links
 
 * [Create a Multi Blog Site with Jekyll](https://www.garron.me/en/blog/multi-blog-site-jekyll.html)
 * [How can I have multiple authors for one post in Jekyll?](http://stackoverflow.com/questions/15189008/how-can-i-have-multiple-authors-for-one-post-in-jekyll)
