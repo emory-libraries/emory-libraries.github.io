@@ -1,12 +1,10 @@
 ---
 layout: post
 title: Front-end Testing Research Notes
-tags: 
-    - jekyll
+tags: [front-end, testing, ui, packages, research]
 authors:
     - yang_li
 ---
-# Background
 
 Front-end testing is not quite the same as unit testing in the backend world because of the user interactions that happen in a browser (and you know, in reality its multiple browsers of different versions on different devices). That leads to this topic about front-end testing kit research.
 
@@ -23,9 +21,9 @@ I naively characterize the "functional/unit testing" as one kind of testing that
 
 The other "performance testing" aims at improving front-end performance. Some might argue that the performance side can be separated from traditional unit testing of for example the backend, but I think it doesn’t hurt to have it here because it can also be automated and streamlined with testing tools and aids such as grunt, gulp, and your favorite continuous integration tools.
 
-# Tools and Services
+## Tools and Services
 
-## Performance
+### Performance
 
 **[BrowserSync](https://www.browsersync.io/)**  
 BrowserSync, the most amazing way to develop real-time on multiple devices.
@@ -36,12 +34,14 @@ WEBPAGETEST, it runs a series of performance profiling tasks and generate report
 **[YSlow](http://yslow.org/)**  
 YSlow is developed by Yahoo when they were the performance king. This is still a very handy I tried as a Chrome addon.
 
-**Ember Inspector**
+**Ember Inspector**  
+
 > The Ember Inspector is a plug-in for the Chrome developer tools that makes understanding and debugging your Ember.js application a snap.
 
-**Uncss**
+**Uncss**  
+
 > UnCSS is a tool that removes unused CSS from your stylesheets. It works across multiple files and supports Javascript-injected CSS.
-> The process by which UnCSS removes the unused rules is as follows:
+The process by which UnCSS removes the unused rules is as follows:
 
 * The HTML files are loaded by PhantomJS and JavaScript is executed.
 * Used stylesheets are extracted from the resulting HTML.
@@ -52,14 +52,15 @@ YSlow is developed by Yahoo when they were the performance king. This is still a
 **Chrome Inspector**  
 Chrome is my favorite browser for development purpose and a big part of the reason is its powerful inspector. I used the profiling feature before and find it very helpful. Here is an intro that offers a quick guide to the profiling tool. [Google Chrome Inspector Timeline](https://developer.chrome.com/devtools/docs/timeline)
 
-## Task Runners
+### Task Runners
 
 **Grunt**   
 Grunt is basically a task scheduler/runner that can help you run a series of front-end tasks. It's JS friendly and is designed for front-end dependency management tools such as npm.  
 
-From the official website:   
+From the official website:  
+
 > Each time grunt is run, it looks for a locally installed Grunt using node's require() system. Because of this, you can run grunt from any subfolder in your project.
-> If a locally installed Grunt is found, the CLI loads the local installation of the Grunt library, applies the configuration from your Gruntfile, and executes any tasks you've requested for it to run. To really understand what is happening, read the code.
+If a locally installed Grunt is found, the CLI loads the local installation of the Grunt library, applies the configuration from your Gruntfile, and executes any tasks you've requested for it to run. To really understand what is happening, read the code.
 
 [Get Started](http://gruntjs.com/getting-started)  
 [Grunt for People Who Think Things Like Grunt are Weird and Hard](https://24ways.org/2013/grunt-is-not-weird-and-hard/)
@@ -79,40 +80,54 @@ This is a task runner that will help us automate processes in the front-end code
 Tasks such as running JSHint, compile assets, minify JS
 
 **Get grunt**  
-`npm install grunt --save-dev`  
+
+```shell
+npm install grunt --save-dev
+```  
 
 **Get grunt-cli**  
-`npm install grunt-cli --sav-dev`
+
+```shell
+npm install grunt-cli --sav-dev
+```
 
 **Get a grunt module such as jshint**
-`npm install grunt-contrib-jshint --save-dev`
-`npm install grunt-contrib-uglify --save-dev`
+
+```shell
+npm install grunt-contrib-jshint --save-dev
+npm install grunt-contrib-uglify --save-dev
+```
 
 There are a few tasks that grunt and its community offers to developers, such as these below:  
-> grunt-contrib-clean  
-> grunt-contrib-watch  
-> grunt-contrib-compass  
-> grunt-contrib-imagemin  
-> grunt-contrib-concat  
-> grunt-concurrent  
-> grunt-svgmin  
-> grunt-jekyll  
 
-Correspondingly we can install them with these lines:  
-> npm install grunt-contrib-clean --sav-dev
-> npm install grunt-contrib-watch --sav-dev
-> npm install grunt-contrib-compass --sav-dev
-> npm install grunt-contrib-imagemin --sav-dev
-> npm install grunt-contrib-concat --sav-dev
-> npm install grunt-concurrent --sav-dev
-> npm install grunt-svgmin --sav-dev
-> npm install grunt-jekyll --sav-dev
+```shell
+grunt-contrib-clean
+grunt-contrib-watch
+grunt-contrib-compass
+grunt-contrib-imagemin
+grunt-contrib-concat
+grunt-concurrent
+grunt-svgmin
+grunt-jekyll
+```
+
+Correspondingly we can install them with these lines:
+
+```shell
+npm install grunt-contrib-clean --sav-dev
+npm install grunt-contrib-watch --sav-dev
+npm install grunt-contrib-compass --sav-dev
+npm install grunt-contrib-imagemin --sav-dev
+npm install grunt-contrib-concat --sav-dev
+npm install grunt-concurrent --sav-dev
+npm install grunt-svgmin --sav-dev
+npm install grunt-jekyll --sav-dev
+```
 
 These above tasks can be a good starting point to learn and use Grunt. We can schedule other tasks that can be helpful for front-end deployment, performance improvement, garbage removal etc.
 
-## Casper.js
+### Casper.js
 
-###Background###
 > CasperJS is an open source navigation scripting & testing utility written in Javascript for the PhantomJS WebKit headless browser and SlimerJS (Gecko). It eases the process of defining a full navigation scenario and provides useful high-level functions, methods & syntactic sugar for doing common tasks such as:
 
 * defining & ordering browsing navigation steps
@@ -142,24 +157,21 @@ Some of the key points with CasperJS that I tried:
 * Test content creation, transactions, other features
 
 
-## QUnit and Unit Testing in Front-end
+### QUnit and Unit Testing in Front-end
 
 This presentation is a good intro to unit testing and I've also extracted some examples as notes: [Unit Testing QUnit](http://benalman.com/talks/unit-testing-qunit.html#16)
 
-> // You can either set an expectation (number) like this.
+```shell
+// You can either set an expectation (number) like this.
+test("test name", function() {  
+  expect(3); // QUnit expects 3 assertions in this test.  
+});
 
-> test("test name", function() {  
-> expect(3);
-
->  // QUnit expects 3 assertions in this test.  
-> });
-
-> // Or like this.
-
-> test("test name", 3, function() {  
->   // QUnit expects 3 assertions in this test.  
-> });
-
+// Or like this.
+test("test name", 3, function() {  
+  // QUnit expects 3 assertions in this test.  
+});
+```
 
 The meaning of atomic:
 atomic basically means you cannot disintegrate or break down into smaller pieces.
@@ -168,27 +180,26 @@ that’s it. there are no intermediate steps (at least not on this level)
 
 I like this description which is:
 
-> Unit testing makes sure you are using quality ingredients. Functional testing makes sure your application doesn't taste like crap.
-> And I am pretty sure that someone in front of the screen reading this article want to jump up and start yelling but when there are many constraints we would need to unfortunately make some compromises and prioritize what can make a difference.
+> Unit testing makes sure you are using quality ingredients. Functional testing makes sure your application doesn't taste like crap. And I am pretty sure that someone in front of the screen reading this article want to jump up and start yelling but when there are many constraints we would need to unfortunately make some compromises and prioritize what can make a difference.
 
-## Summary
+### Summary
 They are attacking different problems. Since PhantomJS runs perfectly on the command-line, it is suitable as the first layer of smoke testing, whether as part of development workflow and/or in a continuous integration server. Selenium targets multiple browsers and hence it is very useful to ensure cross-browser consistency and carry out extensive testings across different operating systems.
 
 [Webcast: PhantomJS, CasperJS, Screenshot Comparison, and Ghost Inspector](https://ghostinspector.com/blog/webcast-phantomjs-casperjs-screenshot-comparison-and-ghost-inspector/)
 
 
-# Others
+## Others
 
-## Travis CI
+### Travis CI
 
 [Integrate Travis CI with your GitHub repo](https://github.com/mbonaci/mbo-storm/wiki/Integrate-Travis-CI-with-your-GitHub-repo)
 
 [Using Travis Continuous Integration for Your Open Source Project](https://blog.dylants.com/2013/03/21/using-travis-continuous-integration-for-your-open-source-project/)
 
-## Casper vs. Others
+### Casper vs. Others
 
 [CasperJS vs. Jasmine vs. Mocha in a Chart](http://www.slant.co/topics/1489/compare/~mocha_vs_jasmine_vs_casperjs)
 
-## Other JS render engines
+### Other JS render engines
 * SlimerJS
 * TrifleJS
