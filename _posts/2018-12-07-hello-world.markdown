@@ -3,7 +3,7 @@ layout: post
 title:  "Hello world"
 author: "Emily Porter"
 date:   2018-12-07 16:18:47 -0500
-categories: dlp
+categories: [dlp, scrum]
 ---
 
 
