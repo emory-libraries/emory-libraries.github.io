@@ -7,7 +7,7 @@ categories: dlp
 ---
 
 
-#Hello, world!
+# Hello, world!
 
 We just kicked off our Scrum Team for the dlp (DLP/Digital Library Program) effort, starting development on our first two products, Curate and "Disco" (pending its final name).
 
